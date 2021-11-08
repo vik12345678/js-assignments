@@ -63,7 +63,7 @@ Now you are ready to implement assignments. Tasks modules are located in the **t
   }
 ```
 Resolve this task using the following [TDD steps](https://en.wikipedia.org/wiki/Test-driven_development#Test-driven_development_cycle):
-* Run unit tests and make sure that everything is OK and there are no failing tests.
+* Run unit test and make sure that everything is OK and there are no failing tests.
 * Read the task description in the comment above the function. Try to understand the idea. If you got it you are to write unit test first, but unit tests are already prepared :) Skip step with writing unit tests.
 * Remove the throwing error line from function body
 ```javascript
