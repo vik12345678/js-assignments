@@ -143,7 +143,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    let temp = value.replace(count, '');
+	let temp = str.replace(value, '');
 	temp = temp.replace('  ', ' ');
 	return temp;
 	//throw new Error('Not implemented');
@@ -161,7 +161,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-	  let temp = value;
+	  let temp = str;
 	temp = temp.replace('<', '');
 	temp = temp.replace('>', '');
 	return temp;
@@ -180,7 +180,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-	  let temp = value.toUpperCase();
+	  let temp = str.toUpperCase();
 	return temp;
     //throw new Error('Not implemented');
 }
@@ -234,11 +234,11 @@ function getRectangleString(width, height) {
   let final;
   
   
-  final = felement[0] + gorelement.repeat(value1-2) + felement[1] + '\n';
-  let prom = ' ' + verelement + empty.repeat(value1-2) + verelement + '\n'
-  prom = prom.repeat(value2-2);
+  final = felement[0] + gorelement.repeat(width-2) + felement[1] + '\n';
+  let prom = ' ' + verelement + empty.repeat(width-2) + verelement + '\n'
+  prom = prom.repeat(height-2);
   final = final + prom;
-  final = final + ' ' + felement[2] + gorelement.repeat(value1-2) + felement[3] + '\n';
+  final = final + ' ' + felement[2] + gorelement.repeat(width-2) + felement[3] + '\n';
   return  final;
   //  throw new Error('Not implemented');
 }
@@ -260,7 +260,23 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+	let first = [];
+	let second = [];
+	first = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+	second = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+	let final = '';
+	let prom;
+  
+  for (let i = 0; i < str.length; i++)
+    {
+  		prom = first.indexOf(str[i]);
+      if (prom >0 ){final = final + second[prom]};
+      if (prom <= 0 ){final = final + str[i]};
+    }
+  
+  return  final;
+	
+ //   throw new Error('Not implemented');
 }
 
 /**
