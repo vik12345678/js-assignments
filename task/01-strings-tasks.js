@@ -322,7 +322,24 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+	
+	let mass = [];
+	mass = 'A234567891JQK';
+  
+	let first = mass.indexOf(value[0]);
+	let second;
+  
+	if (first == 9) {second = value[2].charCodeAt(0)}
+	else {second = value[1].charCodeAt(0)};
+  
+	if (second == 9830) {first = first + 13};  
+	if (second == 9829) {first = first + 26};  
+	if (second == 9824) {first = first + 39};  
+   
+	return first;
+  
+  
+    //throw new Error('Not implemented');
 }
 
 
