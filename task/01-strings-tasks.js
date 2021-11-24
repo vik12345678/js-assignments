@@ -125,7 +125,14 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    throw new Error('Not implemented');
+	let temp = '';
+	for (i = 0; i<count; i++)
+    {
+      temp = temp + value;
+      
+    }
+  return temp;
+    //throw new Error('Not implemented');
 }
 
 /**
