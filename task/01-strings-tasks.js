@@ -180,7 +180,9 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    throw new Error('Not implemented');
+	  let temp = value.toUpperCase();
+	return temp;
+    //throw new Error('Not implemented');
 }
 
 /**
@@ -221,7 +223,24 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
+	let felement = [];
+	felement[0] = '\u250C';
+  felement[1] = '\u2510';
+  felement[2] = '\u2514';
+  felement[3] = '\u2518';
+  let gorelement = '\u2500';
+  let verelement = '\u2502';
+  let empty = ' ';
+  let final;
+  
+  
+  final = felement[0] + gorelement.repeat(value1-2) + felement[1] + '\n';
+  let prom = ' ' + verelement + empty.repeat(value1-2) + verelement + '\n'
+  prom = prom.repeat(value2-2);
+  final = final + prom;
+  final = final + ' ' + felement[2] + gorelement.repeat(value1-2) + felement[3] + '\n';
+  return  final;
+  //  throw new Error('Not implemented');
 }
 
 
