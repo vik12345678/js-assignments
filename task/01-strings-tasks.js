@@ -89,7 +89,8 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-    throw new Error('Not implemented');
+	return[value[0]];
+    //throw new Error('Not implemented');
 }
 
 /**
@@ -104,10 +105,10 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-	let search = '\\0+' + '\\a+' + '\\b+' + '\\t+' + '\\n+' + '\\v+' + '\\f+' + '\\r+';
+	let search = ' ,\0,\a,\b,\t,\n,\v,\f,\r';
 	let temp = value;
-	if (value[0].indexOf(search) != 0){temp = temp.slice(1)}
-	if (value[value.length-1].indexOf(search) != 0){temp = temp.slice(0,(value.length-2))}
+	if (search.indexOf(value[0]) != (-1)){temp = temp.slice(1)}
+	if (search.indexOf(value[value.length-1]) != (-1)){temp = temp.slice(0,(value.length-1))}
 	return temp;
    // throw new Error('Not implemented');
 }
