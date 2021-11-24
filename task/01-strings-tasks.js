@@ -125,13 +125,8 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-	let temp = '';
-	for (i = 0; i<count; i++)
-    {
-      temp = temp + value;
-      
-    }
-  return temp;
+	let temp = value.repeat(count);
+	return temp;
     //throw new Error('Not implemented');
 }
 
@@ -166,7 +161,11 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    throw new Error('Not implemented');
+	  let temp = value;
+	temp = temp.replace('<', '');
+	temp = temp.replace('>', '');
+	return temp;
+   // throw new Error('Not implemented');
 }
 
 
