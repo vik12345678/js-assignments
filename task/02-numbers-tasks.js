@@ -97,7 +97,10 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-    throw new Error('Not implemented');
+	let temp = (b*(-1))/a;
+	return temp;
+ 
+ //   throw new Error('Not implemented');
 }
 
 
@@ -135,7 +138,15 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-    throw new Error('Not implemented');
+	   let temp = value;
+  while (temp >= 10)
+    {
+      temp = temp - 10;
+    }
+
+  return temp;
+  
+ //   throw new Error('Not implemented');
 }
 
 
@@ -151,7 +162,9 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-    throw new Error('Not implemented');
+		let temp = parseFloat(value);
+  return temp;
+  //  throw new Error('Not implemented');
 }
 
 /**
@@ -168,7 +181,9 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a,b,c) {
-    throw new Error('Not implemented');
+      let temp = Math.sqrt(Math.pow(a,2)+Math.pow(b,2)+Math.pow(c,2));
+ 	return temp;
+	//throw new Error('Not implemented');
 }
 
 /**
@@ -189,7 +204,20 @@ function getParallelipidedDiagonal(a,b,c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    throw new Error('Not implemented');
+	  let temp;
+	if (pow !=0)
+    {
+  		temp = num/(Math.pow(10,pow));
+  		temp = Math.round(temp);
+  		temp = temp * Math.pow(10,pow);
+    }
+  else{
+    temp = num;
+    
+  }
+    		return temp;
+			
+    //throw new Error('Not implemented');
 }
 
 /**
@@ -210,7 +238,20 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    throw new Error('Not implemented');
+      if (n <= 3) return n > 1;
+  
+  if ((n % 2 === 0) || (n % 3 === 0)) return false;
+  
+  let count = 5;
+  
+  while (Math.pow(count, 2) <= n) {
+    if (n % count === 0 || n % (count + 2) === 0) return false;
+    
+    count += 6;
+  }
+  
+  return true;
+	//throw new Error('Not implemented');
 }
 
 /**
