@@ -84,12 +84,20 @@ function isLeapYear(date) {
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
 function timeSpanToString(startDate, endDate) {
-	var rez = startDate - endDate;
- let h = Math.trunc(rez / 3600000 % 100).toString().padStart(2, '0');
- let m = Math.trunc(rez / 60000 % 60).toString().padStart(2, '0');
- let s = Math.trunc(rez / 1000 % 60).toString().padStart(2, '0');
- let ms = Math.trunc(rez % 1000).toString().padStart(3, '0');
- return (h + ':' + m + ':' + s + '.' + ms);
+  let mlsec = (endDate.getMilliseconds() - startDate.getMilliseconds());
+  mlsec = Math.abs(mlsec);
+	let sec = (endDate.getSeconds() - startDate.getSeconds());
+	let min = (endDate.getMinutes() - startDate.getMinutes());
+	let hour = (endDate.getHours() - startDate.getHours());
+  
+  let mlsecstr = mlsec.toString().padStart(3, '0');
+  let secstr = sec.toString().padStart(2, '0');
+  let minstr = min.toString().padStart(2, '0');
+  let hourstr = hour.toString().padStart(2, '0');
+  
+  let temp = hourstr + ':' + minstr + ':' + secstr + '.' + mlsecstr;
+
+  return temp;
    //throw new Error('Not implemented');
 }
 
