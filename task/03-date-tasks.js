@@ -91,6 +91,7 @@ function timeSpanToString(startDate, endDate) {
   
 	let mlsecstr = mlsec.toString();
 	if (mlsec <100) {mlsecstr = '0' + mlsecstr};
+	if (mlsec <10) {mlsecstr = '0' + mlsecstr};
 	let secstr = sec.toString();
 	if (sec < 10) {secstr = '0' + secstr};
 	let minstr = min.toString();
