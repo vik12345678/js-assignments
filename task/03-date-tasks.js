@@ -62,8 +62,7 @@ function parseDataFromIso8601(value) {
  */
 function isLeapYear(date) {
 	
-	let newdate = Date(date);
-	let year = newdate.getYear;
+	let year = date.getFullYear();
  	return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
   //  throw new Error('Not implemented');
 }
