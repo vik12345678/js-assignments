@@ -90,6 +90,7 @@ function timeSpanToString(startDate, endDate) {
 	let hour = (endDate.getHours() - startDate.getHours());
   
 	let mlsecstr = mlsec.toString();
+	mlsec = Math.abs(mlsec);
 	if (mlsec <100) {mlsecstr = '0' + mlsecstr};
 	if (mlsec <10) {mlsecstr = '0' + mlsecstr};
 	let secstr = sec.toString();
