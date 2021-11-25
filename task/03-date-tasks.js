@@ -40,7 +40,9 @@ function parseDataFromRfc2822(value) {
  *    '2016-01-19T08:07:37Z' => Date()
  */
 function parseDataFromIso8601(value) {
-   throw new Error('Not implemented');
+	  let temp = Date.parse(value);
+  return temp;
+   //throw new Error('Not implemented');
 }
 
 
@@ -59,7 +61,10 @@ function parseDataFromIso8601(value) {
  *    Date(2015,1,1)    => false
  */
 function isLeapYear(date) {
-   throw new Error('Not implemented');
+	
+	let year = date;
+ 	return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+  //  throw new Error('Not implemented');
 }
 
 
