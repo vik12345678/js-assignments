@@ -700,7 +700,7 @@ function findAllOccurences(arr, item) {
   return tempstep;
   
   
-   throw new Error('Not implemented');
+ //  throw new Error('Not implemented');
 }
 
 /**
@@ -964,7 +964,25 @@ function selectMany(arr, childrenSelector) {
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
 function getElementByIndexes(arr, indexes) {
-    throw new Error('Not implemented');
+	
+	  let tempsize = childrenSelector.length;
+	
+  if (tempsize == 1)
+    {
+     	return arr[childrenSelector[0]]
+    }
+  
+    if (tempsize == 2)
+    {
+     	return arr[childrenSelector[0]][childrenSelector[1]]
+    }
+  
+    if (tempsize == 3)
+    {
+     	return arr[childrenSelector[0]][childrenSelector[1]][childrenSelector[2]]
+    }
+	
+    //throw new Error('Not implemented');
 }
 
 
