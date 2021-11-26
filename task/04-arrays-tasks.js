@@ -23,7 +23,9 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-   throw new Error('Not implemented');
+   let temp = arr.indexOf(value);
+   return temp;
+   //throw new Error('Not implemented');
 }
 
 /**
@@ -38,7 +40,17 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-   throw new Error('Not implemented');
+	  let temp = [];
+  let tempfig = 1;
+  for (let i=0; i<len; i++)
+    {
+      temp[i] = tempfig;
+      tempfig = tempfig +2;
+    }
+  
+  return temp;
+  
+ //  throw new Error('Not implemented');
 }
 
 
@@ -54,7 +66,18 @@ function generateOdds(len) {
  *    [] => [] 
  */
 function doubleArray(arr) {
-   throw new Error('Not implemented');
+	
+	  let temparr = arr;
+  let temp = arr.length
+  for (let i = 0; i< temp; i++)
+    {
+      temparr[temp+i] = temparr[i];
+      
+    }
+  return temparr;
+  
+  
+  // throw new Error('Not implemented');
 }
 
 
@@ -70,7 +93,21 @@ function doubleArray(arr) {
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
-   throw new Error('Not implemented');
+	  let temparr = [];
+  let tempstep = 0;
+  let temp = arr.length
+  for (let i = 0; i< temp; i++)
+    {
+      if(arr[i] > 0 )
+        {
+      		temparr[tempstep] = arr[i];
+      		tempstep = tempstep +1;
+    
+        }
+    }
+  return temparr;
+  
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -85,7 +122,21 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
-   throw new Error('Not implemented');
+	  let temparr = [];
+  let tempstep = 0;
+  let temp = arr.length;
+  for (let i = 0; i< temp; i++)
+    {
+      if(isNaN(arr[i]))
+        {
+      		temparr[tempstep] = arr[i];
+      		tempstep = tempstep +1;
+    
+        }
+    }
+  return temparr;
+  
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -102,7 +153,23 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-   throw new Error('Not implemented');
+	  let arrcheck = [false, 0, NaN, '', undefined];
+  
+  let temparr = [];
+  let tempstep = 0;
+  let temp = arr.length;
+  for (let i = 0; i< temp; i++)
+    {
+      if((arrcheck.indexOf(arr[i]) < 0) && (!Number.isNaN(arr[i])))
+        {
+      		temparr[tempstep] = arr[i];
+      		tempstep = tempstep +1;
+    
+        }
+    }
+  return temparr;
+  
+  // throw new Error('Not implemented');
 }
 
 /**
