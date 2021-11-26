@@ -444,7 +444,24 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-   throw new Error('Not implemented');
+	  let temparr = [];
+  let tempsize = arr.length;
+	let temp=0;
+  let tempmass = 1;
+  
+  for(let i = 0; i<tempsize; i++)
+    {
+      for (let i2=0; i2<tempmass; i2++)
+        {
+      		temparr[temp] =arr[i];
+		      temp = temp+1;
+        }
+      tempmass = tempmass+1;
+    }
+
+    return temparr;
+	
+   //throw new Error('Not implemented');
 }
 
 
@@ -462,7 +479,48 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-   throw new Error('Not implemented');
+	let temparr = [];
+  let tempsize = arr.length;
+	let temp1;
+	let temp2;
+  let temp3;
+  let tempindex1;
+  let tempindex2;
+  
+  if (tempsize>0){
+    
+    temp1 = arr[0];
+  	for(let i = 0; i<tempsize; i++)
+    {
+				if(arr[i]>temp1){temp1 = arr[i]; tempindex1 = i;}
+    }
+  }
+  
+  if (tempsize>1){
+    temp2 = arr[0];
+  	for(let i = 0; i<tempsize; i++)
+    {
+				if((arr[i]>temp2) && (i != tempindex1)){temp2 = arr[i]; tempindex2 = i;}
+    }
+  
+  } 
+  
+  if (tempsize>2){
+    temp3 = arr[0];
+  	for(let i = 0; i<tempsize; i++)
+    {
+				if((arr[i]>temp3) && (i != tempindex1) && (i != tempindex2)){temp3 = arr[i]}
+    }
+  }
+  
+  
+		if(temp1 != undefined) {temparr[0] = temp1};
+  	if(temp2 != undefined) {temparr[1] = temp2};
+  	if(temp3 != undefined) {temparr[2] = temp3};
+  
+    return temparr;
+	
+   //throw new Error('Not implemented');
 }
  
  
@@ -480,7 +538,26 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-   throw new Error('Not implemented');
+	
+	  let arrcheck = [false, 0, NaN, '', undefined, null];
+      
+  let temparr = [];
+  let tempsize = arr.length;
+	let temp = 0;
+  
+  for(let i = 0; i<tempsize; i++)
+    {
+			if((arrcheck.indexOf(arr[i]) < 0) && (!isNaN(arr[i])) && (arr[i] > 0) && (typeof arr[i] != "string"))
+      
+      {temp = temp + 1;}
+      
+    }
+    
+    
+    
+    return temp;
+	
+   //throw new Error('Not implemented');
 }
  
 /** 
@@ -497,7 +574,46 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
-   throw new Error('Not implemented');
+	
+	let arrfig = ['zero', 'one',	'two',	'three',	'four',	'five',	'six',	'seven',	'eight',	'nine'];   
+  let temparr = [];
+  let tempsize = arr.length;
+	let temp = 0;
+  
+  for(let i = 0; i<tempsize; i++)
+    {
+			for(let i2 = 0; i2<11; i2++)
+      {
+        if (arr[i] == arrfig[i2]){temparr[temp] = i2; temp = temp+1;}
+        
+      }	  
+    }
+   
+  let tempbool = true;
+  
+  while(tempbool)
+  {
+    tempbool = false;
+    for(let i = 0; i<tempsize-1; i++)
+    {
+      if(temparr[i] > temparr[i+1])
+          {
+            let tempfig = temparr[i+1];
+            temparr[i+1] = temparr[i];
+            temparr[i] = tempfig;
+            tempbool = true;
+          }  
+    }
+  } 
+  
+    for(let i = 0; i<tempsize; i++)
+    {
+     	temparr[i] = arrfig[temparr[i]];
+    } 
+    return temparr
+	
+	
+   //throw new Error('Not implemented');
 }
 
 /** 
@@ -513,7 +629,18 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-   throw new Error('Not implemented');
+	  let temparr = [];
+  let tempsize = arr.length;
+	let temp = 0;
+  
+  for(let i = 0; i<tempsize; i++)
+    {
+			temp = temp + arr[i];
+      
+    } 
+    return temp;
+	
+   //throw new Error('Not implemented');
 }
  
 /** 
@@ -529,7 +656,21 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-   throw new Error('Not implemented');
+		let arrcheck = [null, undefined, NaN, false, 0, ''];
+  
+  let temparr = [];
+  let tempstep = 0;
+  let temp = arr.length;
+  for (let i = 0; i< temp; i++)
+    {
+      if((arrcheck.indexOf(arr[i]) > 0) || (Number.isNaN(arr[i])) || (arr[i] == null))
+        {
+      		tempstep = tempstep +1;
+        }
+    }
+  return tempstep;
+  
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -547,6 +688,18 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
+	
+
+  let temp = arr.length;
+  for (let i = 0; i< temp; i++)
+    {
+      if ((arr[i] == item) && (typeof arr[i] == typeof item))
+      
+      		tempstep = tempstep +1;
+    }
+  return tempstep;
+  
+  
    throw new Error('Not implemented');
 }
 
@@ -562,7 +715,17 @@ function findAllOccurences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-   throw new Error('Not implemented');
+	
+	  let temp = '';
+  let tempsize = arr.length;
+  for (let i = 0; i< tempsize; i++)
+    {
+			if (temp != ''){temp = temp + ","}
+      temp = temp + String(arr[i]);
+    }
+  return temp;
+  
+  // throw new Error('Not implemented');
 }
 
 
@@ -591,7 +754,48 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  */
 function sortCitiesArray(arr) {
-   throw new Error('Not implemented');
+	 let temp = arr;
+  let tempsize = arr.length;
+  let tempbool = true;
+  
+  while(tempbool)
+    {
+      tempbool = false;
+      for (let i = 0; i< tempsize-1; i++)
+        {
+          if (temp[i].country[0] > temp[i+1].country[0])
+            {
+              let temptemp = temp[i+1];
+              temp[i+1] = temp[i];
+              temp[i] = temptemp;
+              tempbool = true;
+            }
+          
+        }
+      
+    }
+  tempbool = true;
+  
+    while(tempbool)
+    {
+      tempbool = false;
+      for (let i = 0; i< tempsize-1; i++)
+        {
+          if ((temp[i].country[0] == temp[i+1].country[0]) && (temp[i].city[0] > temp[i+1].city[0]))
+            {
+              let temptemp = temp[i+1];
+              temp[i+1] = temp[i];
+              temp[i] = temptemp;
+              tempbool = true;
+            }
+          
+        }
+      
+    }
+
+  return temp;
+  
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -613,7 +817,28 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]   
  */
 function getIdentityMatrix(n) {
-   throw new Error('Not implemented');
+	  var temp = new Array(n);
+	let tempfig = 0;
+  
+	for (let i = 0; i<n; i++)
+    {
+      temp [i] = new Array(n);
+      for (let i2 = 0; i2<n; i2++)
+      {
+        temp[i][i2] = 0
+       }
+	   }
+
+	for (let i = 0; i<n; i++)
+    {
+       temp[i][tempfig] = 1;
+      tempfig = tempfig+1;
+      
+    }
+  
+  return temp;
+  
+  // throw new Error('Not implemented');
 }
 
 /**
