@@ -855,7 +855,18 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-   throw new Error('Not implemented');
+	
+	  let temparr = [];
+  let temp = 0;
+  for(let i = start; i<=end; i++)
+    {
+    		temparr[temp] = start + temp;
+      	temp = temp+1;
+    
+  	}
+  
+  return temparr;
+   //throw new Error('Not implemented');
 }
 
 /**
@@ -870,7 +881,23 @@ function getIntervalArray(start, end) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
-   throw new Error('Not implemented');
+	
+	  let temparr = [];
+  let tempmass = arr.length;
+  let temp = 0;
+  for(let i = 0; i<tempmass; i++)
+    {
+    		if (temparr.indexOf(arr[i]) < 0)
+          {
+            temparr[temp] = arr[i];
+            temp = temp+1;
+          }
+    
+  	}
+  
+  return temparr;
+  
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -960,7 +987,32 @@ function getElementByIndexes(arr, indexes) {
  * 
  */
 function swapHeadAndTail(arr) {
-    throw new Error('Not implemented');
+	  let outarr = arr;
+  let tempsize = arr.length;
+  let temp = Math.floor(tempsize/2);
+  let tempvar = 0;
+  if((tempvar = tempsize%2) != 0){tempvar = 1}
+  
+  let temparr = [];
+  
+   for (let i = 0; i< temp; i++)
+    {
+      temparr[i] = arr[i];
+    }
+ 
+     for (let i = 0; i< temp; i++)
+    {
+      outarr[i] = arr[temp+i + tempvar];
+    }
+  
+	    for (let i = 0; i< temp; i++)
+    {
+      outarr[temp+i+tempvar] = temparr[i];
+    }
+  
+	return outarr;
+	
+    //throw new Error('Not implemented');
 }
 
 
