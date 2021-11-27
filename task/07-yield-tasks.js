@@ -33,34 +33,45 @@
  *
  */
 function* get99BottlesOfBeer() {
-	  let one = 'bottles of beer on the wall, 99 bottles of beer.';
-  let two = 'Take one down and pass it around, 98 bottles of beer on the wall.';
+
+  let one1 = ' bottles of beer on the wall, ';
+  let one2 = ' bottles of beer.';
+  let two1 = 'Take one down and pass it around, ';
+  let two2 = ' bottles of beer on the wall.';
   
   let fone = 'No more bottles of beer on the wall, no more bottles of beer.' 
   let ftwo = 'Go to the store and buy some more, 99 bottles of beer on the wall.'
   
+  let tre = 'no more';
+  let addstr1;
+  let addstr2;
   let tempfig = 99;
-  let tempout1;
-  let tempout2;
+  let tempout;
   
-  for(let i = 2; i>=0; i--)
+  
+  for(let i = 99; i>=0; i--)
     {
-      tempout1 = '';
-      tempout2 = '';
+      tempout = '';
       if (i !=0) {
-      	let addstr = i.toString();
-      	tempout1 = addstr + " " + one;
-      	tempout2 = two;
+      	addstr1 = i.toString();
       }
+      if ((i-1) !=0){
+        addstr2 = (i-1).toString();
+      	tempout = addstr1 + one1 + addstr1 + one2 + '\n' + two1 + addstr2 + two2;
+      }
+      if ((i-1) ==0){
+      	tempout = addstr1 + one1 + addstr1 + one2 + '\n' +  two1 + tre + two2;
+      }
+
       if (i == 0){
-      	tempout1 = fone;
-      	tempout2 = ftwo; 
+      	tempout = fone + "\n" +ftwo;
         
       }
       
-      yield tempout1;
-      yield tempout2;
+      yield tempout;
     }
+	
+	
 	
     //throw new Error('Not implemented');
 }
