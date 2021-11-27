@@ -371,7 +371,34 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+	
+	    let tempmass = ccn.toString();
+    let tempmassfig = [];
+    let temp = 20;
+    let tempbool = false;
+    let tempcount = 0;
+    let temptemp;
+    .
+      
+    while(temp>10){
+       
+    temp = 0;
+    for (var i = 0; i< tempmass.length; i++) {
+//    var c = str.charAt(i);
+			tempmassfig[i] = parseInt(tempmass[i]);
+      
+    }
+   
+    for (var i = 0; i< tempmass.length; i++) {
+      temp  = temp+tempmassfig[i];
+    }
+
+      tempmass = temp.toString();
+    }
+
+      return temp;
+	  
+    //throw new Error('Not implemented');
 }
 
 
@@ -397,7 +424,33 @@ function getDigitalRoot(num) {
  *   '{[(<{[]}>)]}' = true 
  */
 function isBracketsBalanced(str) {
-    throw new Error('Not implemented');
+	
+	    let strcheck1 = '[{(';
+   	let strcheck2 = ']})';
+    let temp1 = 0;
+    let temp2 = 0;
+    let temp3 = 0;
+    
+    let tempbool = false;
+    let temptempbool = true;
+    
+    for (let i =0; i<str.length; i++)
+      {
+    		if (str[i] == strcheck1[0]){temp1 = temp1+1}
+    		if (str[i] == strcheck1[1]){temp2 = temp2+1}
+    		if (str[i] == strcheck1[2]){temp3 = temp3+1}
+    		if (str[i] == strcheck2[0]){temp1 = temp1-1}
+    		if (str[i] == strcheck2[1]){temp2 = temp2-1}
+    		if (str[i] == strcheck2[2]){temp3 = temp3-1}
+        
+        if (temp1<0 || temp2<0 || temp3<0){temptempbool = false}
+        
+      }
+    
+    if(temp1 ==0 && temp2==0 && temp3 ==0 && temptempbool){tempbool = true}
+      return tempbool;
+	  
+    //throw new Error('Not implemented');
 }
 
 
@@ -457,7 +510,35 @@ function timespanToHumanString(startDate, endDate) {
  *    365, 10 => '365'
  */
 function toNaryString(num, n) {
-    throw new Error('Not implemented');
+	
+	    let tempmass = [];
+    let tempcount = 0;
+    let temp1 = num;
+    let temp2;
+    
+    while (temp1>0)
+      {
+    temp2 = temp1%n;
+    tempmass[tempcount] = temp2;
+    temp1 = (temp1-temp2)/n;
+    tempcount = tempcount+1;
+        
+      }
+   
+    let tempmasrev = tempmass.reverse();
+    let tempout = '';
+    for (let i =0; i<tempcount; i++)
+    {
+      tempout = tempout + tempmasrev[i].toString()
+      
+    }
+ //   let tempstr = '20';
+ //   let temp = parseInt(tempstr, n);
+    
+    
+      return tempout;
+	  
+  //  throw new Error('Not implemented');
 }
 
 
@@ -474,7 +555,45 @@ function toNaryString(num, n) {
  *   ['/web/favicon.ico', '/web-scripts/dump', '/webalizer/logs'] => '/'
  */
 function getCommonDirectoryPath(pathes) {
-    throw new Error('Not implemented');
+	    let tempsize = pathes.length; 
+    let tempbool = true;
+    let tempcount = 0;
+    let tempout = [];
+    let temp = '';
+    
+    while (tempbool)
+      {
+        let templetter = pathes[0][tempcount];
+        for (let i = 0; i<tempsize; i++)
+          {
+            if (templetter != pathes[i][tempcount]){tempbool = false};  
+          }
+    		    if (tempbool){tempout[tempcount] = templetter};
+    				tempcount = tempcount +1;
+      }
+    
+    
+//    parseInt(tempstr);
+    
+    tempbool = true;
+    tempcount = tempout.length;
+    while (tempbool && tempcount >0)
+    {
+      	if (tempout[tempcount] != '/'){tempout[tempcount] = null}
+      	if (tempout[tempcount] == '/'){tempbool = false}
+				tempcount = tempcount -1;    
+    }   
+
+    for(let i=0; i<tempout.length; i++)
+      {
+        if (tempout[i] != null){temp = temp + tempout[i]}
+        
+      }
+    
+    
+    return temp;
+	
+    //throw new Error('Not implemented');
 }
 
 
@@ -497,7 +616,41 @@ function getCommonDirectoryPath(pathes) {
  *
  */
 function getMatrixProduct(m1, m2) {
-    throw new Error('Not implemented');
+	   let tempbool;
+    let tempsize1 = 0;
+    let tempsize2 = 0;
+    
+
+    
+    tempbool = true;
+    while(tempbool)
+      {
+        if (m2[0][tempsize2] == undefined){tempbool = false}
+        if (m2[0][tempsize2] != undefined){tempsize2 = tempsize2+1}
+      }
+    
+    
+    let tempmass = new Array(m1.length);
+    for (let i = 0; i<tempsize2; i++)
+      {
+    		tempmass[i] = new Array(tempsize1);
+      }
+    
+    for(let i1=0; i1<m1.length; i1++)
+    {
+    	for(let i2=0; i2<tempsize2; i2++)
+    	{   	
+        tempmass[i1][i2] = 0;
+  	    for(let i3=0; i3<m2.length; i3++)
+    		{
+	     		tempmass[i1][i2] = tempmass[i1][i2] + m1[i1][i3]*m2[i3][i2];
+    		}
+    	}
+    }
+       
+    return tempmass
+	
+    //throw new Error('Not implemented');
 }
 
 
