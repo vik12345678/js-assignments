@@ -511,33 +511,7 @@ function timespanToHumanString(startDate, endDate) {
  */
 function toNaryString(num, n) {
 	
-	    let tempmass = [];
-    let tempcount = 0;
-    let temp1 = num;
-    let temp2;
-    
-    while (temp1>0)
-      {
-    temp2 = temp1%n;
-    tempmass[tempcount] = temp2;
-    temp1 = (temp1-temp2)/n;
-    tempcount = tempcount+1;
-        
-      }
-   
-    let tempmasrev = tempmass.reverse();
-    let tempout = '';
-    for (let i =0; i<tempcount; i++)
-    {
-      tempout = tempout + tempmasrev[i].toString()
-      
-    }
- //   let tempstr = '20';
- //   let temp = parseInt(tempstr, n);
-    
-    
-      return tempout;
-	  
+  
   //  throw new Error('Not implemented');
 }
 
