@@ -425,31 +425,7 @@ function getDigitalRoot(num) {
  */
 function isBracketsBalanced(str) {
 	
-	    let strcheck1 = '[{(';
-   	let strcheck2 = ']})';
-    let temp1 = 0;
-    let temp2 = 0;
-    let temp3 = 0;
-    
-    let tempbool = false;
-    let temptempbool = true;
-    
-    for (let i =0; i<str.length; i++)
-      {
-    		if (str[i] == strcheck1[0]){temp1 = temp1+1}
-    		if (str[i] == strcheck1[1]){temp2 = temp2+1}
-    		if (str[i] == strcheck1[2]){temp3 = temp3+1}
-    		if (str[i] == strcheck2[0]){temp1 = temp1-1}
-    		if (str[i] == strcheck2[1]){temp2 = temp2-1}
-    		if (str[i] == strcheck2[2]){temp3 = temp3-1}
-        
-        if (temp1<0 || temp2<0 || temp3<0){temptempbool = false}
-        
-      }
-    
-    if(temp1 ==0 && temp2==0 && temp3 ==0 && temptempbool){tempbool = true}
-      return tempbool;
-	  
+  
     //throw new Error('Not implemented');
 }
 
