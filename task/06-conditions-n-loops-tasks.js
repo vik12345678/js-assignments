@@ -372,31 +372,6 @@ function isCreditCardNumber(ccn) {
  */
 function getDigitalRoot(num) {
 	
-	    let tempmass = ccn.toString();
-    let tempmassfig = [];
-    let temp = 20;
-    let tempbool = false;
-    let tempcount = 0;
-    let temptemp;
-    .
-      
-    while(temp>10){
-       
-    temp = 0;
-    for (var i = 0; i< tempmass.length; i++) {
-//    var c = str.charAt(i);
-			tempmassfig[i] = parseInt(tempmass[i]);
-      
-    }
-   
-    for (var i = 0; i< tempmass.length; i++) {
-      temp  = temp+tempmassfig[i];
-    }
-
-      tempmass = temp.toString();
-    }
-
-      return temp;
 	  
     //throw new Error('Not implemented');
 }
