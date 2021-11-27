@@ -616,39 +616,6 @@ function getCommonDirectoryPath(pathes) {
  *
  */
 function getMatrixProduct(m1, m2) {
-	   let tempbool;
-    let tempsize1 = 0;
-    let tempsize2 = 0;
-    
-
-    
-    tempbool = true;
-    while(tempbool)
-      {
-        if (m2[0][tempsize2] == undefined){tempbool = false}
-        if (m2[0][tempsize2] != undefined){tempsize2 = tempsize2+1}
-      }
-    
-    
-    let tempmass = new Array(m1.length);
-    for (let i = 0; i<tempsize2; i++)
-      {
-    		tempmass[i] = new Array(tempsize1);
-      }
-    
-    for(let i1=0; i1<m1.length; i1++)
-    {
-    	for(let i2=0; i2<tempsize2; i2++)
-    	{   	
-        tempmass[i1][i2] = 0;
-  	    for(let i3=0; i3<m2.length; i3++)
-    		{
-	     		tempmass[i1][i2] = tempmass[i1][i2] + m1[i1][i3]*m2[i3][i2];
-    		}
-    	}
-    }
-       
-    return tempmass
 	
     //throw new Error('Not implemented');
 }
