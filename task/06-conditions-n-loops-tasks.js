@@ -681,32 +681,34 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-	  let tempvalX = 0;
-  let tempvalO = 0;
-  let tempint = 0;
-  let tempcheck = [21,37,42,15,68,53,71,39,91];
-  let tempwin = [100, 136, 201, 107, 144, 186, 180, 181];
-  
+  let tempvalX = false;
+  let tempvalO = false;
   let tempout;
   
-  for (let i = 0; i < position.length; i++)
-    {
-      for (let j = 0; j < position.length; j++)
-        {
-         	if(position[i][j] == 'X')
-          {tempvalX = tempvalX + tempcheck[tempint];} 
-          if(position[i][j] == '0')
-          {tempvalO = tempvalO + tempcheck[tempint];} 
-          tempint = tempint +1;
-        }
-    }
+  if ((position[0][0]== 'X')&&(position[0][1]== 'X')&&(position[0][2]== 'X')){tempout = 'X'};
+  if ((position[1][0]== 'X')&&(position[1][1]== 'X')&&(position[1][2]== 'X')){tempout = 'X'};
+  if ((position[2][0]== 'X')&&(position[2][1]== 'X')&&(position[2][2]== 'X')){tempout = 'X'};
   
-  for (let i=0; i<8; i++)
-    {
-       if(tempvalX == tempwin[i]){tempout = 'X'};
- 			 if(tempvalO == tempwin[i]){tempout = '0'};
-    }
+  if ((position[0][0]== 'X')&&(position[1][0]== 'X')&&(position[2][0]== 'X')){tempout = 'X'};
+	if ((position[0][1]== 'X')&&(position[1][1]== 'X')&&(position[2][1]== 'X')){tempout = 'X'};
+  if ((position[0][2]== 'X')&&(position[1][2]== 'X')&&(position[2][2]== 'X')){tempout = 'X'};
+  
+	if ((position[0][0]== 'X')&&(position[1][1]== 'X')&&(position[2][2]== 'X')){tempout = 'X'};
+  if ((position[2][0]== 'X')&&(position[1][1]== 'X')&&(position[0][2]== 'X')){tempout = 'X'};
+  
+  
+  if ((position[0][0]== '0')&&(position[0][1]== '0')&&(position[0][2]== '0')){tempout = '0'};
+  if ((position[1][0]== '0')&&(position[1][1]== '0')&&(position[1][2]== '0')){tempout = '0'};
+  if ((position[2][0]== '0')&&(position[2][1]== '0')&&(position[2][2]== '0')){tempout = '0'};
+  
+  if ((position[0][0]== '0')&&(position[1][0]== '0')&&(position[2][0]== '0')){tempout = '0'};
+	if ((position[0][1]== '0')&&(position[1][1]== '0')&&(position[2][1]== '0')){tempout = '0'};
+  if ((position[0][2]== '0')&&(position[1][2]== '0')&&(position[2][2]== '0')){tempout = '0'};
 
+	if ((position[0][0]== '0')&&(position[1][1]== '0')&&(position[2][2]== '0')){tempout = '0'};
+  if ((position[2][0]== '0')&&(position[1][1]== '0')&&(position[0][2]== '0')){tempout = '0'};
+  
+  
       return tempout;
 	  
     //throw new Error('Not implemented');
