@@ -199,7 +199,17 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-    throw new Error('Not implemented');
+	
+	  for (var i = 0; i < str.length; i++) {
+    var c = str.charAt(i);
+    if (str.indexOf(c) == i && str.indexOf(c, i + 1) == -1) {
+      return c;
+    }
+  }
+  return null;
+  
+  
+  //  throw new Error('Not implemented');
 }
 
 
@@ -242,7 +252,14 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+	let tempmass = '';  
+	for (var i = str.length; i >= 0; i--) {
+    var c = str.charAt(i);
+		tempmass = tempmass + c;
+    }
+  return tempmass;
+  
+  //  throw new Error('Not implemented');
 }
 
 
@@ -259,6 +276,12 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
+	  let tempmass = num.toString();  
+  let tempstr = tempmass.split('').reverse().join('');   
+      
+  let temp = parseInt(tempstr);
+  return temp;
+  
     throw new Error('Not implemented');
 }
 
@@ -284,7 +307,52 @@ function reverseInteger(num) {
  *   4916123456789012 => false
  */
 function isCreditCardNumber(ccn) {
-    throw new Error('Not implemented');
+	
+	   let tempmass = ccn.toString();
+    let tempmassfig = [];
+    let temp = 0;
+    let tempbool = false;
+    let tempcount = 0;
+    let temptemp;
+    
+    for (var i = 0; i< tempmass.length; i++) {
+//    var c = str.charAt(i);
+			tempmassfig[i] = parseInt(tempmass[i]);
+      
+    }
+    
+    temptemp = tempmass.length - 1;
+      while (temptemp>0)
+      {
+        temptemp = temptemp - 2;
+      }
+    
+	if (temptemp == 0){tempcount = 1}
+    
+    for (var i = tempcount; i< tempmass.length-1; i=i+2) {
+    
+      tempmassfig[i] = 2*tempmassfig[i];
+      if (tempmassfig[i]>9){ tempmassfig[i] = tempmassfig[i]-9}
+      
+    } 
+    
+    
+    
+    for (var i = 0; i< tempmass.length; i++) {
+      temp  = temp+tempmassfig[i];
+      
+    }
+    
+    while (temp>0)
+      {
+        temp = temp - 10;
+      }
+    
+	if (temp == 0){tempbool = true}
+    
+
+      return tempbool;
+  //  throw new Error('Not implemented');
 }
 
 
