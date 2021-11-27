@@ -681,7 +681,35 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-    throw new Error('Not implemented');
+	  let tempvalX = 0;
+  let tempvalO = 0;
+  let tempint = 0;
+  let tempcheck = [21,37,42,15,68,53,71,39,91];
+  let tempwin = [100, 136, 201, 107, 144, 186, 180, 181];
+  
+  let tempout;
+  
+  for (let i = 0; i < position.length; i++)
+    {
+      for (let j = 0; j < position.length; j++)
+        {
+         	if(position[i][j] == 'X')
+          {tempvalX = tempvalX + tempcheck[tempint];} 
+          if(position[i][j] == '0')
+          {tempvalO = tempvalO + tempcheck[tempint];} 
+          tempint = tempint +1;
+        }
+    }
+  
+  for (let i=0; i<8; i++)
+    {
+       if(tempvalX == tempwin[i]){tempout = 'X'};
+ 			 if(tempvalO == tempwin[i]){tempout = '0'};
+    }
+
+      return tempout;
+	  
+    //throw new Error('Not implemented');
 }
 
 
