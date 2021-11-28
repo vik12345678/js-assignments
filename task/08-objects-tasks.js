@@ -28,7 +28,7 @@ class Rectangle {
     this.width = width;
   }
 
-  get area() {
+  get getArea() {
     return this.calcArea();
   }
 
